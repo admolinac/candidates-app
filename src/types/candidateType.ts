@@ -3,11 +3,12 @@ import { z } from 'zod';
 const candidateSchema = z.object({
     name: z.string().min(3, "El nombre debe tener al menos 3 caracteres").max(100, "El nombre no puede exceder los 100 caracteres"),
     age: z.number().positive().int(),
+    city: z.string(),
     experience: z.number().gte(0),
-    education: z.array(z.string()).optional(),
     status: z.enum(['Pending', 'Reviewing', 'Interviewing', 'Hired', 'Refused']),
     skills: z.array(z.string()),
-    working: z.boolean()
+    working: z.boolean(),
+    imageName: z.string()
 });
 
 export type CandidateType = z.infer<typeof candidateSchema>;
