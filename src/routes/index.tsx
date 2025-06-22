@@ -11,7 +11,6 @@ function App() {
     const candidates: CandidateType[] = [
         {
             name: 'John Doe',
-            city: 'New York',
             age: 30,
             experience: 5,
             skills: ['JavaScript', 'React', 'Node.js'],
@@ -21,7 +20,6 @@ function App() {
         },
         {
             name: 'Jane Smith',
-            city: 'Los Angeles',
             age: 28,
             experience: 3,
             skills: ['Python', 'Django'],
@@ -31,7 +29,6 @@ function App() {
         },
         {
             name: 'Alice Johnson',
-            city: 'Chicago',
             age: 35,
             experience: 10,
             skills: ['Java', 'Spring Boot'],
@@ -48,7 +45,6 @@ function App() {
                         <Candidate
                             key={index}
                             name={candidate.name}
-                            city={candidate.city}
                             age={candidate.age}
                             experience={candidate.experience}
                             skills={candidate.skills}
