@@ -8,6 +8,7 @@ export const Route = createFileRoute('/')({
 })
 
 function App() {
+
     const candidates: CandidateType[] = [
         {
             name: 'John Doe',
@@ -41,7 +42,10 @@ function App() {
     return (
         <div className="App">
             {
-                candidates.map((candidate, index) => (
+                candidates.length === 0 ? (
+                    <p>No candidates available</p>
+                ) : (
+                    candidates.map((candidate, index) => (
                         <Candidate
                             key={index}
                             name={candidate.name}
@@ -51,9 +55,9 @@ function App() {
                             working={candidate.working}
                             status={candidate.status}
                             imageName={candidate.imageName}>
-                            {/* Children */}
                             <button className="candidate-button">View Profile</button>
                         </Candidate>
+                    )
                     )
                 )
             }
