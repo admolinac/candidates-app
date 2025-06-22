@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
-import '../App.css'
+import '../styles/Candidate.css'
 import Candidate from '@/components/candidate'
 import type { CandidateType } from '@/types/candidateType'
 
@@ -55,9 +55,8 @@ function App() {
                             working={candidate.working}
                             status={candidate.status}
                             imageName={candidate.imageName}>
-                            <a href={'https://www.linkedin.com'} target="_blank" rel="noopener noreferrer">
-                                LinkedIn Profile
-                            </a>
+                            {/* Children */}
+                            <button className="candidate-button">View Profile</button>
                         </Candidate>
                     )
                 )
