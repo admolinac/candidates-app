@@ -46,11 +46,29 @@ const Candidate = (props: CandidateProps) => {
             <div className="mt-4 flex justify-center">
                 <img className="max-w-32" src={`/avatars/${imageName}`} alt="avatar" />
             </div>
-
+            <button className={cn(
+                "mt-4 w-full rounded-2xl p-2",
+                "bg-sky-600 text-white font-medium",
+                "hover:bg-sky-800 transition-colors duration-300",
+            )}
+                onClick={copyData}>
+                Copy data
+            </button>
         </div>
     );
 
-
+    function copyData() {
+        const textToCopy = `Name: ${name}, Status: ${status}, Age: ${age}, Working: ${working ? 'Yes' : 'No'}, Experience: ${experience} years, Skills: ${skills.join(', ')}`;
+        navigator.clipboard
+            .writeText(textToCopy)
+            .then(() => {
+                alert('Data copied to clipboard! ✅');
+            })
+            .catch((error) => {
+                console.error('Error copying data: ', error);
+                alert('Failed to copy data ❌');
+            });
+    }
 
     function getStatusColor(status: CandidateType['status']) {
         if (status === 'Hired') {
