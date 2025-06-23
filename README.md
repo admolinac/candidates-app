@@ -6,13 +6,16 @@ This is a simple ReactJS application designed to display a list of candidates, e
 
 This app demonstrates:
 
-* **File-based routing** using the **TanStack Router** library. Routes are defined as files under the `src/routes` directory.
-* **Schema validation** with **Zod**.
-* **Improved import paths** using the **vite-tsconfig-paths** plugin to avoid complex relative imports.
+* **File-based routing** using the [TanStack Router](https://tanstack.com/router) library. Routes are defined as files under the `src/routes` directory.
+* **Schema validation** with [Zod](https://zod.dev/).
+* **Improved import paths** using the [vite-tsconfig-paths](https://www.npmjs.com/package/vite-tsconfig-paths) plugin to avoid complex relative imports.
 * **Dynamic and conditional rendering** using ternary operators and the `map()` function.
+* **Clipboard API integration** to enable copying candidate data. When the "Copy Data" button is clicked:
+  * The app attempts to write candidate details to the system clipboard using `navigator.clipboard.writeText`.
+  * If successful, the browser displays a success alert.
+  * If an error occurs, an error alert is shown instead.
 
 If the candidates list is empty, the app displays the default message:
-
 > “No candidates available”.
 
 Otherwise, it renders a list of cards, one for each candidate.
@@ -36,12 +39,15 @@ Based on the `working` prop, it conditionally displays:
 * ✅ **"Currently working"** — if the candidate is employed
 * ❌ **"Not currently working"** — if the candidate is not
 
-### Children Support
-The component also accepts a `children` prop, which allows you to inject additional HTML or React content into the candidate card. This can be useful for rendering custom messages, actions, or detailed content per candidate.
-
 ## 🎨 Styling
 
-All styles for the `Candidate` component are defined in:
+Styling in this project is handled using:
+
+* [Tailwind CSS](https://tailwindcss.com/) — utility-first CSS framework.
+* [tailwind-merge](https://www.npmjs.com/package/tailwind-merge) — for safely merging Tailwind class names without conflicts.
+* [clsx](https://www.npmjs.com/package/clsx) — for building `className` strings conditionally.
+
+Component-specific styles are also defined in:
 `src/styles/Candidate.css`
 
 ## ▶️ To run this application
