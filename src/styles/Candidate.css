@@ -1,64 +1,8 @@
 @import "tailwindcss";
 
-.candidate-container {
-    background-color: #FEFEFF;
-    border: 1px solid #E5E5E5;
-    border-radius: 10px;
-    padding: 24px;
-    margin: 20px auto;
-    max-width: 400px;
-}
-
-
-.candidate-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #2B2D42;
-    margin-bottom: 20px;
-    text-align: center;
-    border-bottom: 1px solid #E5E5E5;
-    padding-bottom: 10px;
-}
-
-.candidate-info {
-    font-size: 1rem;
-    color: #38423B;
-    margin: 8px 0;
-    line-height: 1.4;
-}
-
-.candidate-info strong {
-    font-weight: bold;
-    color: #353831;
-}
-
-.candidate-status {
-    margin-top: 12px;
-    color: #EF233C;
-    font-weight: bold;
-}
-
-.candidate-avatar {
-    margin-top: 20px;
-    text-align: center;
-}
-
-.candidate-avatar img {
-    width: 110px;
-    height: 110px;
-    object-fit: cover;
-}
-
-.candidate-button{
-    display: block;
-    width: 100%;
-    padding: 12px;
-    background-color: #1D4E89;
-    color: #FFFFFF;
-    text-align: center;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1rem;
-    margin-top: 20px;
+span, button, div{
+    transition: 
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
 }

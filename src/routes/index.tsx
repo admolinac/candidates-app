@@ -23,7 +23,7 @@ function App() {
             name: 'Jane Smith',
             age: 28,
             experience: 3,
-            skills: ['Python', 'Django'],
+            skills: ['Python', 'Django', 'Flask'],
             working: false,
             status: 'Pending',
             imageName: 'jane.svg'
@@ -32,7 +32,7 @@ function App() {
             name: 'Alice Johnson',
             age: 35,
             experience: 10,
-            skills: ['Java', 'Spring Boot'],
+            skills: ['Java', 'Spring Boot', 'Microservices'],
             working: true,
             status: 'Hired',
             imageName: 'alice.svg'
@@ -40,7 +40,7 @@ function App() {
     ];
 
     return (
-        <div className="App">
+        <div className="flex flex-row flex-wrap justify-center items-center gap-4 p-4">
             {
                 candidates.length === 0 ? (
                     <p>No candidates available</p>
@@ -55,7 +55,6 @@ function App() {
                             working={candidate.working}
                             status={candidate.status}
                             imageName={candidate.imageName}>
-                            <button className="candidate-button">View Profile</button>
                         </Candidate>
                     )
                     )
